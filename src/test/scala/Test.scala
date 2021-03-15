@@ -1,4 +1,6 @@
-class MySuite extends munit.FunSuite {
+import munit.FunSuite
+
+class MySuite extends FunSuite {
   test("hello") {
     val obtained = 42
     val expected = 42

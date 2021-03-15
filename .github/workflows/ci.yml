@@ -12,26 +12,20 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
-    - name: running kafka
+    - name: running infrastructure
       run: |
-        cd kafka
+        cd infrastructure
         docker-compose up -d
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v1
+    - name: Setup Scala
+      uses: olafurpg/setup-scala@v10
       with:
-        python-version: 3.9
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r requirements-dev.txt
+        java-version: "adopt@1.8"
+    - name: Build and Test
+      run: sbt -v -Dfile.encoding=UTF-8 +test
     - name: logging kafka
       run: |
         cd kafka
         docker-compose logs            
-    - name: set pythonpath
-      run: |
-        echo "PYTHONPATH=./src:${PYTHONPATH}" >> $GITHUB_ENV        
     - name: Test
       run: |	  
         pytest --junitxml=report.xml
