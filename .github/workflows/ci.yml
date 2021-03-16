@@ -21,22 +21,17 @@ jobs:
       with:
         java-version: "adopt@1.8"
     - name: Build and Test
-      run: sbt -v -Dfile.encoding=UTF-8 +test
-    - name: logging kafka
+      run: sbt -v +test
+    - name: logging infrastructure
       run: |
-        cd kafka
+        cd infrastructure
         docker-compose logs            
-    - name: Test
-      run: |	  
-        pytest --junitxml=report.xml
-        coverage run --source src --branch -m pytest
-        coverage xml
     - name: ReportGenerator
       uses: danielpalme/ReportGenerator-GitHub-Action@4.8.4
       with:
-        reports: 'coverage.xml'
+        reports: '*.xml'
         targetdir: 'docs' # REQUIRED # The directory where the generated report should be saved.
-        sourcedirs: 'src' 
+        sourcedirs: 'target/test-reports' 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.1
       with:
