@@ -3,6 +3,7 @@ scalaVersion := "2.13.3"
 name := "hello-world"
 organization := "ch.epfl.scala"
 version := "1.0"
+coverageEnabled := true 
 
 libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2"
 

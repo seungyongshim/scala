@@ -21,7 +21,9 @@ jobs:
       with:
         java-version: "adopt@1.8"
     - name: Build and Test
-      run: sbt -v +test
+      run: |
+        sbt -v test
+        sbt -v coverageReport
     - name: logging infrastructure
       run: |
         cd infrastructure
@@ -29,7 +31,7 @@ jobs:
     - name: ReportGenerator
       uses: danielpalme/ReportGenerator-GitHub-Action@4.8.4
       with:
-        reports: 'target/test-reports/*.xml'
+        reports: 'target/test-reports/cobertura.xml'
         targetdir: 'docs' # REQUIRED # The directory where the generated report should be saved.
         sourcedirs: 'src' 
     - name: Upload a Build Artifact
@@ -49,4 +51,4 @@ jobs:
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        files: report.xml
+        files: target/test-reports/*.xml
