@@ -31,7 +31,7 @@ jobs:
     - name: ReportGenerator
       uses: danielpalme/ReportGenerator-GitHub-Action@4.8.4
       with:
-        reports: 'target/test-reports/cobertura.xml'
+        reports: 'target/**/coverage-report/*.xml'
         targetdir: 'docs' # REQUIRED # The directory where the generated report should be saved.
         sourcedirs: 'src' 
     - name: Upload a Build Artifact
