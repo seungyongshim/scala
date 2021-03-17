@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="0.3333333333333333" branch-rate="1" lines-covered="1" lines-valid="3" branches-covered="0" branches-valid="0" complexity="0" version="0" timestamp="1615944286">
+  <sources>
+    <source>--source</source>
+    <source>/home/runner/work/scala/scala/src/main/scala</source>
+  </sources>
+  <packages>
+    <package name="&lt;empty&gt;" line-rate="0.3333333333333333" branch-rate="1" complexity="0">
+      <classes>
+        <class name="CubeCalculator" filename="/home/runner/work/scala/scala/src/main/scala/Main.scala" line-rate="1" branch-rate="1" complexity="0">
+          <methods>
+            <method name="&lt;empty&gt;/CubeCalculator/cube" signature="()" line-rate="1" branch-rate="1" complexity="0">
+              <lines>
+                <line number="9" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="Main" filename="/home/runner/work/scala/scala/src/main/scala/Main.scala" line-rate="0" branch-rate="1" complexity="0">
+          <methods>
+            <method name="&lt;empty&gt;/Main/&lt;none&gt;" signature="()" line-rate="0" branch-rate="1" complexity="0">
+              <lines>
+                <line number="2" hits="0" branch="false" />
+                <line number="3" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="2" hits="0" branch="false" />
+            <line number="3" hits="0" branch="false" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
